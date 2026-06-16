@@ -37,3 +37,4 @@ env/
 *.ext3
 sing
 singrw
+assemble_submission.sh
