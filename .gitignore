@@ -39,3 +39,4 @@ sing
 singrw
 assemble_submission.sh
 sbatches/
+*.sbatch

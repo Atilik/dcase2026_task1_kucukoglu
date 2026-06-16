@@ -27,11 +27,11 @@ We have organized the repository into clean, functional folders:
 
 - **`results/`**: Contains the final output CSVs and `.meta.yaml` files for all 4 submissions.
 - **`model_outputs/`**: Contains all the PyTorch checkpoints, data splits, and pre-computed test logits for each experimental model run.
-- **`scripts/`**: Contains all supplementary python files including:
+- **`scripts/`**: Contains all python code for the project, including:
+  - Core models and inference engines (`models.py`, `train_test.py`, `eval_inference.py`, `ensemble_evaluate.py`)
   - Data building & embedding extraction (`build_dataset.py`, `extract_*.py`)
   - Analysis & plotting (`analyze_classes.py`, `check_test_distribution.py`)
-- **`configs/`**: Contains all the YAML configuration files for the different models.
-- **`Root directory`**: Core models and inference engines (`models.py`, `train_test.py`, `eval_inference.py`, `ensemble_evaluate.py`, `compute_class_metrics.py`).
+- **`configs/`**: Contains all the YAML configuration files for the different models (including the main `config.yaml`).
 
 *(The original baseline README has been preserved as `README_baseline.md` for reference.)*
 
