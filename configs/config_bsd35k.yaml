@@ -1,0 +1,22 @@
+# BSD35k-CS only baseline — plain, no weights, no hloss
+active_dataset: BSD35k-CS
+
+datasets:
+  BSD35k-CS:
+    metadata_csv: "./data/BSD35k-CS/metadata/BSD35k-CS_metadata.csv"
+    audio_emb_folder: "./data/BSD35k-CS/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD35k-CS/features/clap_text_embeddings"
+    class_names: "./data/BSD35k-CS/metadata/BST_description.csv"
+
+output_path: "data_bsd35k"
+model_output_dir: "model_output_bsd35k"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+
+emb_size_audio: 512
+emb_size_text: 512
+modes:
+  - both
+  - audio

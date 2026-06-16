@@ -1,0 +1,33 @@
+# Strategy A: External ALL classes with sample downweighting
+# External samples weighted at 0.3, BSD10k at 1.0
+active_dataset: BSD10k-v1.2
+datasets:
+  BSD10k-v1.2:
+    metadata_csv: "./data/BSD10k-v1.2/metadata/BSD10k_metadata.csv"
+    audio_emb_folder: "./data/BSD10k-v1.2/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD10k-v1.2/features/clap_text_embeddings"
+    class_names: "./data/BSD10k-v1.2/metadata/BST_description.csv"
+
+# External data integration
+external_data:
+  mapping_csv: "data/external_mapping.csv"
+  audio_emb_folder: "data/external_embeddings/clap_audio_embeddings"
+  text_emb_folder: "data/external_embeddings/clap_text_embeddings"
+
+# Sample weighting: downweight external data
+dataset_weight_map:
+  "BSD10k-v1.2": 1.0
+  "ESC-50": 0.3
+  "FSD50K": 0.3
+
+# Output paths
+output_path: "data_ext_weighted"
+model_output_dir: "model_output_ext_weighted"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+
+# Training
+modes: ["both"]
+mixup_alpha: 0.2

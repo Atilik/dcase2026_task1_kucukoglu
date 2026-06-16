@@ -1,0 +1,30 @@
+# Balanced BSD35k (median) + Mixup 0.2
+active_dataset: BSD10k-v1.2
+extra_datasets:
+  - BSD35k-CS
+datasets:
+  BSD10k-v1.2:
+    metadata_csv: "./data/BSD10k-v1.2/metadata/BSD10k_metadata.csv"
+    audio_emb_folder: "./data/BSD10k-v1.2/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD10k-v1.2/features/clap_text_embeddings"
+    class_names: "./data/BSD10k-v1.2/metadata/BST_description.csv"
+  BSD35k-CS:
+    metadata_csv: "./data/BSD35k-CS/metadata/BSD35k-CS_metadata.csv"
+    audio_emb_folder: "./data/BSD35k-CS/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD35k-CS/features/clap_text_embeddings"
+    class_names: "./data/BSD35k-CS/metadata/BST_description.csv"
+output_path: "data_combined"
+model_output_dir: "model_output_balanced_med_mix02"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+emb_size_audio: 512
+emb_size_text: 512
+modes:
+  - both
+  - audio
+use_class_equalization: true
+equalization_target: median
+equalization_factor: 1.0
+mixup_alpha: 0.2

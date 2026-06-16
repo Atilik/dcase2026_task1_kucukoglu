@@ -1,0 +1,152 @@
+# Submission information
+submission:
+  label: Kucukoglu_NYU_task1_3
+
+  name: Single HATR Model with Cross-Fold Augmentation
+
+  abbreviation: NYU_Single
+
+  authors:
+    - lastname: Kucukoglu
+      firstname: Mehmet Atilay
+      email: mk9649@nyu.edu
+      corresponding: true
+      affiliation:
+        abbreviation: NYU
+        institute: New York University
+        location: New York, USA
+
+# System information
+system:
+  source_code: https://github.com/Atilik/dcase2026_task1_kucukoglu
+
+  description:
+    input_sampling_rate: 48kHz
+
+    audio_representation: LAION-CLAP HTSAT-tiny 630k-audioset-fusion-best
+
+    text_representation: title, tags, description, CLAP
+
+    data_augmentation: cross-fold embedding swap, noise addition, random masking
+
+    machine_learning_method: HATR single model (5-fold average)
+
+    external_data_usage: !!null
+
+    hierarchical_setting: !!null
+
+  complexity:
+    total_parameters: 377989
+    MACS: !!null
+
+  external_datasets: !!null
+
+# System results
+results:
+  development_datasets:
+
+    bsd10k-v1.2:
+      overall:
+        hP: 0.7984
+        hR: 0.7899
+        hF: 0.7913
+
+      class_wise:
+        m-sp:
+          hP: 0.878
+          hR: 0.9043
+          hF: 0.8907
+        m-si:
+          hP: 0.8039
+          hR: 0.832
+          hF: 0.8174
+        m-m:
+          hP: 0.7621
+          hR: 0.7567
+          hF: 0.7567
+        is-p:
+          hP: 0.9178
+          hR: 0.8791
+          hF: 0.8979
+        is-s:
+          hP: 0.9438
+          hR: 0.9281
+          hF: 0.9351
+        is-w:
+          hP: 0.9658
+          hR: 0.9644
+          hF: 0.965
+        is-k:
+          hP: 0.9317
+          hR: 0.9685
+          hF: 0.9493
+        is-e:
+          hP: 0.7756
+          hR: 0.7279
+          hF: 0.7494
+        sp-s:
+          hP: 0.9224
+          hR: 0.9399
+          hF: 0.9303
+        sp-c:
+          hP: 0.4737
+          hR: 0.5256
+          hF: 0.4913
+        sp-p:
+          hP: 0.7894
+          hR: 0.8048
+          hF: 0.796
+        fx-o:
+          hP: 0.9063
+          hR: 0.9091
+          hF: 0.9076
+        fx-v:
+          hP: 0.6494
+          hR: 0.7434
+          hF: 0.6878
+        fx-m:
+          hP: 0.7943
+          hR: 0.8568
+          hF: 0.8232
+        fx-h:
+          hP: 0.8961
+          hR: 0.9078
+          hF: 0.9016
+        fx-a:
+          hP: 0.6918
+          hR: 0.5717
+          hF: 0.6214
+        fx-n:
+          hP: 0.8387
+          hR: 0.9116
+          hF: 0.8732
+        fx-ex:
+          hP: 0.6837
+          hR: 0.5865
+          hF: 0.6267
+        fx-el:
+          hP: 0.7981
+          hR: 0.7249
+          hF: 0.7593
+        ss-n:
+          hP: 0.7353
+          hR: 0.7261
+          hF: 0.7298
+        ss-i:
+          hP: 0.6153
+          hR: 0.5246
+          hF: 0.5638
+        ss-u:
+          hP: 0.7228
+          hR: 0.6634
+          hF: 0.6892
+        ss-s:
+          hP: 0.8671
+          hR: 0.8115
+          hF: 0.8366
+
+    bsd35k-cs:
+      overall:
+        hP: !!null
+        hR: !!null
+        hF: !!null

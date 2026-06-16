@@ -1,0 +1,37 @@
+# Concatenated CLAP+BEATs + Hierarchical Loss (Experiment 3b-hloss)
+# Audio: CLAP (512-dim) + BEATs (768-dim) = 1280-dim concatenated
+# Text: CLAP (512-dim)
+# Loss: CE(child) + 0.5 * CE(parent)
+
+# INPUT PATHS 
+active_dataset: BSD10k-v1.2
+datasets:
+  BSD10k-v1.2:
+    metadata_csv: "./data/BSD10k-v1.2/metadata/BSD10k_metadata.csv"
+    audio_emb_folder: "./data/BSD10k-v1.2/features/concat_audio_embeddings"  # CLAP+BEATs concatenated (1280-dim)
+    text_emb_folder: "./data/BSD10k-v1.2/features/clap_text_embeddings"
+    class_names: "./data/BSD10k-v1.2/metadata/BST_description.csv"
+
+  BSD35k-CS:
+    metadata_csv: "./data/BSD35k-CS/metadata/BSD35k-CS_metadata.csv"
+    audio_emb_folder: "./data/BSD35k-CS/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD35k-CS/features/clap_text_embeddings"
+    class_names: "./data/BSD35k-CS/metadata/BST_description.csv"
+
+# OUTPUT PATHS
+output_path: "data_concat"
+model_output_dir: "model_output_concat_hloss"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+
+# MODEL SETTINGS
+emb_size_audio: 1280  # CLAP (512) + BEATs (768) concatenated
+emb_size_text: 512    # CLAP text embedding dimension
+modes:
+  - both
+  - audio
+
+# HIERARCHICAL LOSS
+top_class_loss_weight: 0.5  # Weight for parent-class auxiliary loss (0 = disabled)

@@ -1,0 +1,39 @@
+# Data and features
+data*/
+data/
+*.npy
+
+# Model weights and outputs
+model_output*/
+model_output/
+*.pth
+*.pt
+*.bin
+beats_model/
+
+# Logs and cache
+logs/
+__pycache__/
+*.pyc
+
+# Submissions (these will be zipped manually)
+*.output.csv
+*.zip
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# SLURM output
+*.out
+*.err
+
+# IDE/System
+.idea/
+.vscode/
+.DS_Store
+.hac.sifpath
+*.ext3
+sing
+singrw

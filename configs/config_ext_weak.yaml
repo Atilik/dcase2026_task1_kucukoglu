@@ -1,0 +1,29 @@
+# Strategy A: External weak classes only (sp-c, ss-i, fx-ex)
+# Uses precomputed CLAP embeddings from ESC-50 + FSD50K
+# Only adds external samples for the 3 weakest BST classes
+active_dataset: BSD10k-v1.2
+datasets:
+  BSD10k-v1.2:
+    metadata_csv: "./data/BSD10k-v1.2/metadata/BSD10k_metadata.csv"
+    audio_emb_folder: "./data/BSD10k-v1.2/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD10k-v1.2/features/clap_text_embeddings"
+    class_names: "./data/BSD10k-v1.2/metadata/BST_description.csv"
+
+# External data integration
+external_data:
+  mapping_csv: "data/external_mapping.csv"
+  audio_emb_folder: "data/external_embeddings/clap_audio_embeddings"
+  text_emb_folder: "data/external_embeddings/clap_text_embeddings"
+  classes_only: ["sp-c", "ss-i"]  # fx-ex removed: no external data maps to "experimental"
+
+# Output paths
+output_path: "data_ext_weak"
+model_output_dir: "model_output_ext_weak"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+
+# Training
+modes: ["both"]
+mixup_alpha: 0.2

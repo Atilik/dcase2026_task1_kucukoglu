@@ -1,0 +1,152 @@
+# Submission information
+submission:
+  label: Kucukoglu_NYU_task1_2
+
+  name: CLAP-ConvNeXt Ensemble for Heterogeneous Audio Classification
+
+  abbreviation: NYU_Ens2
+
+  authors:
+    - lastname: Kucukoglu
+      firstname: Mehmet Atilay
+      email: mk9649@nyu.edu
+      corresponding: true
+      affiliation:
+        abbreviation: NYU
+        institute: New York University
+        location: New York, USA
+
+# System information
+system:
+  source_code: https://github.com/Atilik/dcase2026_task1_kucukoglu
+
+  description:
+    input_sampling_rate: 48kHz (CLAP), 32kHz (ConvNeXt)
+
+    audio_representation: LAION-CLAP HTSAT-tiny 630k-audioset-fusion-best, ConvNeXt-tiny 465mAP
+
+    text_representation: title, tags, description, CLAP
+
+    data_augmentation: noise addition, random masking, mixup (alpha=0.2), balanced resampling, combined augmentation
+
+    machine_learning_method: HATR ensemble (5 models) with logit averaging
+
+    external_data_usage: !!null
+
+    hierarchical_setting: Hierarchical loss (w=0.7) in one ensemble member
+
+  complexity:
+    total_parameters: 1889944
+    MACS: !!null
+
+  external_datasets: !!null
+
+# System results
+results:
+  development_datasets:
+
+    bsd10k-v1.2:
+      overall:
+        hP: 0.8181
+        hR: 0.8085
+        hF: 0.8112
+
+      class_wise:
+        m-sp:
+          hP: 0.8798
+          hR: 0.91
+          hF: 0.8943
+        m-si:
+          hP: 0.8307
+          hR: 0.8667
+          hF: 0.8479
+        m-m:
+          hP: 0.8227
+          hR: 0.7531
+          hF: 0.7855
+        is-p:
+          hP: 0.9193
+          hR: 0.8906
+          hF: 0.9045
+        is-s:
+          hP: 0.9631
+          hR: 0.9375
+          hF: 0.9499
+        is-w:
+          hP: 0.973
+          hR: 0.9763
+          hF: 0.9745
+        is-k:
+          hP: 0.9516
+          hR: 0.9667
+          hF: 0.9589
+        is-e:
+          hP: 0.7777
+          hR: 0.7843
+          hF: 0.7793
+        sp-s:
+          hP: 0.9299
+          hR: 0.9394
+          hF: 0.9343
+        sp-c:
+          hP: 0.5337
+          hR: 0.5316
+          hF: 0.5293
+        sp-p:
+          hP: 0.8182
+          hR: 0.8238
+          hF: 0.8199
+        fx-o:
+          hP: 0.9124
+          hR: 0.9138
+          hF: 0.9129
+        fx-v:
+          hP: 0.707
+          hR: 0.7133
+          hF: 0.708
+        fx-m:
+          hP: 0.8008
+          hR: 0.8799
+          hF: 0.838
+        fx-h:
+          hP: 0.8925
+          hR: 0.9329
+          hF: 0.9122
+        fx-a:
+          hP: 0.7391
+          hR: 0.6714
+          hF: 0.6966
+        fx-n:
+          hP: 0.8359
+          hR: 0.9248
+          hF: 0.8777
+        fx-ex:
+          hP: 0.7076
+          hR: 0.6144
+          hF: 0.6564
+        fx-el:
+          hP: 0.8169
+          hR: 0.7463
+          hF: 0.7778
+        ss-n:
+          hP: 0.7666
+          hR: 0.7128
+          hF: 0.7377
+        ss-i:
+          hP: 0.6638
+          hR: 0.5582
+          hF: 0.6043
+        ss-u:
+          hP: 0.7491
+          hR: 0.6934
+          hF: 0.7188
+        ss-s:
+          hP: 0.8257
+          hR: 0.8549
+          hF: 0.8379
+
+    bsd35k-cs:
+      overall:
+        hP: !!null
+        hR: !!null
+        hF: !!null

@@ -1,0 +1,152 @@
+# Submission information
+submission:
+  label: Kucukoglu_NYU_task1_1
+
+  name: Multimodal Ensemble System for Heterogeneous Audio Classification
+
+  abbreviation: NYU_Ens
+
+  authors:
+    - lastname: Kucukoglu
+      firstname: Mehmet Atilay
+      email: mk9649@nyu.edu
+      corresponding: true
+      affiliation:
+        abbreviation: NYU
+        institute: New York University
+        location: New York, USA
+
+# System information
+system:
+  source_code: https://github.com/Atilik/dcase2026_task1_kucukoglu
+
+  description:
+    input_sampling_rate: 48kHz (CLAP), 32kHz (ConvNeXt)
+
+    audio_representation: LAION-CLAP HTSAT-tiny 630k-audioset-fusion-best, ConvNeXt-tiny 465mAP, Fine-tuned CLAP
+
+    text_representation: title, tags, description, CLAP
+
+    data_augmentation: noise addition, random masking, mixup (alpha=0.2-0.3), balanced resampling
+
+    machine_learning_method: HATR ensemble (5 models) with logit averaging
+
+    external_data_usage: !!null
+
+    hierarchical_setting: Hierarchical loss (w=0.7) in one ensemble member
+
+  complexity:
+    total_parameters: 1889944
+    MACS: !!null
+
+  external_datasets: !!null
+
+# System results
+results:
+  development_datasets:
+
+    bsd10k-v1.2:
+      overall:
+        hP: 0.8218
+        hR: 0.8049
+        hF: 0.8113
+
+      class_wise:
+        m-sp:
+          hP: 0.8823
+          hR: 0.9146
+          hF: 0.8978
+        m-si:
+          hP: 0.8171
+          hR: 0.8672
+          hF: 0.841
+        m-m:
+          hP: 0.8148
+          hR: 0.7483
+          hF: 0.7794
+        is-p:
+          hP: 0.927
+          hR: 0.8937
+          hF: 0.91
+        is-s:
+          hP: 0.964
+          hR: 0.9312
+          hF: 0.9468
+        is-w:
+          hP: 0.9747
+          hR: 0.9781
+          hF: 0.9763
+        is-k:
+          hP: 0.9541
+          hR: 0.964
+          hF: 0.9589
+        is-e:
+          hP: 0.7992
+          hR: 0.7951
+          hF: 0.7967
+        sp-s:
+          hP: 0.925
+          hR: 0.9424
+          hF: 0.9333
+        sp-c:
+          hP: 0.5672
+          hR: 0.4889
+          hF: 0.5216
+        sp-p:
+          hP: 0.817
+          hR: 0.8276
+          hF: 0.8211
+        fx-o:
+          hP: 0.9056
+          hR: 0.9208
+          hF: 0.9129
+        fx-v:
+          hP: 0.7292
+          hR: 0.7009
+          hF: 0.7128
+        fx-m:
+          hP: 0.8242
+          hR: 0.863
+          hF: 0.8429
+        fx-h:
+          hP: 0.8918
+          hR: 0.9356
+          hF: 0.9131
+        fx-a:
+          hP: 0.7325
+          hR: 0.6506
+          hF: 0.6863
+        fx-n:
+          hP: 0.8311
+          hR: 0.9225
+          hF: 0.8735
+        fx-ex:
+          hP: 0.6923
+          hR: 0.5917
+          hF: 0.637
+        fx-el:
+          hP: 0.8275
+          hR: 0.7461
+          hF: 0.7842
+        ss-n:
+          hP: 0.7641
+          hR: 0.7173
+          hF: 0.7377
+        ss-i:
+          hP: 0.6809
+          hR: 0.5721
+          hF: 0.6199
+        ss-u:
+          hP: 0.727
+          hR: 0.7091
+          hF: 0.7163
+        ss-s:
+          hP: 0.8524
+          hR: 0.8317
+          hF: 0.8402
+
+    bsd35k-cs:
+      overall:
+        hP: !!null
+        hR: !!null
+        hF: !!null

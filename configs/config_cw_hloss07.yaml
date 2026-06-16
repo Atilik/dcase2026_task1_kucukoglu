@@ -1,0 +1,24 @@
+# cw_only + hloss 0.7 (combine two best improvements)
+active_dataset: BSD10k-v1.2
+datasets:
+  BSD10k-v1.2:
+    metadata_csv: "./data/BSD10k-v1.2/metadata/BSD10k_metadata.csv"
+    audio_emb_folder: "./data/BSD10k-v1.2/features/clap_audio_embeddings"
+    text_emb_folder: "./data/BSD10k-v1.2/features/clap_text_embeddings"
+    class_names: "./data/BSD10k-v1.2/metadata/BST_description.csv"
+
+output_path: "data"
+model_output_dir: "model_output_cw_hloss07"
+processed_dataset_csv: "processed_dataset.csv"
+class_dict_json: "class_dict.json"
+top_class_dict_json: "top_class_dict.json"
+top_class_subclass_dict_json: "top_class_subclass_dict.json"
+
+emb_size_audio: 512
+emb_size_text: 512
+modes:
+  - both
+  - audio
+
+use_confidence_weighting: true
+top_class_loss_weight: 0.7

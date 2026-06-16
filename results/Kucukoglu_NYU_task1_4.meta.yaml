@@ -1,0 +1,152 @@
+# Submission information
+submission:
+  label: Kucukoglu_NYU_task1_4
+
+  name: Three-Modality HATR with Whisper and Mixup
+
+  abbreviation: NYU_3Mod
+
+  authors:
+    - lastname: Kucukoglu
+      firstname: Mehmet Atilay
+      email: mk9649@nyu.edu
+      corresponding: true
+      affiliation:
+        abbreviation: NYU
+        institute: New York University
+        location: New York, USA
+
+# System information
+system:
+  source_code: https://github.com/Atilik/dcase2026_task1_kucukoglu
+
+  description:
+    input_sampling_rate: 48kHz (CLAP), 16kHz (Whisper)
+
+    audio_representation: LAION-CLAP HTSAT-tiny 630k-audioset-fusion-best, Whisper-large-v3
+
+    text_representation: title, tags, description, CLAP
+
+    data_augmentation: mixup (alpha=0.2), noise addition, random masking
+
+    machine_learning_method: Three-modality HATR single model (5-fold average)
+
+    external_data_usage: !!null
+
+    hierarchical_setting: !!null
+
+  complexity:
+    total_parameters: 1115669
+    MACS: !!null
+
+  external_datasets: !!null
+
+# System results
+results:
+  development_datasets:
+
+    bsd10k-v1.2:
+      overall:
+        hP: 0.7949
+        hR: 0.7867
+        hF: 0.7883
+
+      class_wise:
+        m-sp:
+          hP: 0.8693
+          hR: 0.8955
+          hF: 0.882
+        m-si:
+          hP: 0.8228
+          hR: 0.8647
+          hF: 0.8424
+        m-m:
+          hP: 0.7762
+          hR: 0.7139
+          hF: 0.7427
+        is-p:
+          hP: 0.909
+          hR: 0.8863
+          hF: 0.8975
+        is-s:
+          hP: 0.9601
+          hR: 0.9503
+          hF: 0.9548
+        is-w:
+          hP: 0.9653
+          hR: 0.9763
+          hF: 0.9707
+        is-k:
+          hP: 0.9498
+          hR: 0.9626
+          hF: 0.956
+        is-e:
+          hP: 0.7646
+          hR: 0.7849
+          hF: 0.7737
+        sp-s:
+          hP: 0.9228
+          hR: 0.9389
+          hF: 0.93
+        sp-c:
+          hP: 0.5342
+          hR: 0.5439
+          hF: 0.5316
+        sp-p:
+          hP: 0.7754
+          hR: 0.8025
+          hF: 0.7873
+        fx-o:
+          hP: 0.9078
+          hR: 0.9018
+          hF: 0.9042
+        fx-v:
+          hP: 0.6492
+          hR: 0.6284
+          hF: 0.6345
+        fx-m:
+          hP: 0.7852
+          hR: 0.8576
+          hF: 0.8194
+        fx-h:
+          hP: 0.8976
+          hR: 0.9115
+          hF: 0.9037
+        fx-a:
+          hP: 0.6641
+          hR: 0.6132
+          hF: 0.6261
+        fx-n:
+          hP: 0.8422
+          hR: 0.8845
+          hF: 0.8626
+        fx-ex:
+          hP: 0.6474
+          hR: 0.5581
+          hF: 0.5994
+        fx-el:
+          hP: 0.7678
+          hR: 0.7203
+          hF: 0.7423
+        ss-n:
+          hP: 0.7095
+          hR: 0.7084
+          hF: 0.7069
+        ss-i:
+          hP: 0.6074
+          hR: 0.5174
+          hF: 0.553
+        ss-u:
+          hP: 0.7131
+          hR: 0.679
+          hF: 0.6938
+        ss-s:
+          hP: 0.8419
+          hR: 0.7932
+          hF: 0.8163
+
+    bsd35k-cs:
+      overall:
+        hP: !!null
+        hR: !!null
+        hF: !!null
