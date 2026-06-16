@@ -1,0 +1,8 @@
+accuracy: 80.56%
+top_accuracy: 89.64%
+macro_accuracy: 75.76%
+macro_top_accuracy: 85.85%
+hierarchical_accuracy: 80.80%
+hierarchical_precision: 79.92%
+hierarchical_recall: 79.54%
+hierarchical_f1: 79.45%

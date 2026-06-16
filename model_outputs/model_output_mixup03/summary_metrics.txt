@@ -1,0 +1,24 @@
+=== Experiment Summary ===
+
+audio/evaluation
+  accuracy    : 77.59% ± 0.63%
+  hierarchical_accuracy: 77.25% ± 0.78%
+  hierarchical_f1: 76.11% ± 0.69%
+  hierarchical_precision: 77.19% ± 0.76%
+  hierarchical_recall: 75.63% ± 0.81%
+  macro_accuracy: 70.76% ± 1.01%
+  macro_top_accuracy: 83.74% ± 0.80%
+  top_accuracy: 88.18% ± 0.56%
+  runs        : 5
+
+both/evaluation
+  accuracy    : 80.06% ± 0.71%
+  hierarchical_accuracy: 79.44% ± 1.26%
+  hierarchical_f1: 78.35% ± 1.17%
+  hierarchical_precision: 79.40% ± 1.16%
+  hierarchical_recall: 78.10% ± 1.16%
+  macro_accuracy: 74.11% ± 0.91%
+  macro_top_accuracy: 84.77% ± 1.63%
+  top_accuracy: 89.12% ± 0.62%
+  runs        : 5
+

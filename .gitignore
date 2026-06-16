@@ -4,8 +4,6 @@ data/
 *.npy
 
 # Model weights and outputs
-model_output*/
-model_output/
 *.pth
 *.pt
 *.bin

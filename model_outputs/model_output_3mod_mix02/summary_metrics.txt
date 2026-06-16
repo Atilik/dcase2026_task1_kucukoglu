@@ -1,0 +1,13 @@
+=== Experiment Summary ===
+
+both/evaluation
+  accuracy    : 80.25% ± 0.46%
+  hierarchical_accuracy: 80.03% ± 0.61%
+  hierarchical_f1: 78.83% ± 0.50%
+  hierarchical_precision: 79.49% ± 0.55%
+  hierarchical_recall: 78.67% ± 0.65%
+  macro_accuracy: 74.60% ± 0.87%
+  macro_top_accuracy: 85.45% ± 0.67%
+  top_accuracy: 89.42% ± 0.45%
+  runs        : 5
+

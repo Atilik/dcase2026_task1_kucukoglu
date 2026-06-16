@@ -1,0 +1,8 @@
+CLAP Fine-tuning Results
+Mean accuracy: 79.94% ± 0.56%
+
+Fold 0: test=79.20%, val_best=81.57%
+Fold 1: test=80.15%, val_best=79.92%
+Fold 2: test=79.60%, val_best=80.83%
+Fold 3: test=79.87%, val_best=81.18%
+Fold 4: test=80.88%, val_best=80.66%
