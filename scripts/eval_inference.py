@@ -42,35 +42,35 @@ SUBMISSIONS = {
     1: {
         "name": "5-model multi-encoder ensemble",
         "models": [
-            ("mixup03",   "model_output_mixup03/both",          "clap",     None),
-            ("m02_hl07",  "model_output_mixup02_hloss07/both",  "clap",     None),
-            ("bal_med",   "model_output_balanced_med/both",      "clap",     None),
-            ("cnx_mix02", "model_output_convnext_mix02/both",   "convnext", None),
+            ("mixup03",   "model_outputs/model_output_mixup03/both",          "clap",     None),
+            ("m02_hl07",  "model_outputs/model_output_mixup02_hloss07/both",  "clap",     None),
+            ("bal_med",   "model_outputs/model_output_balanced_med/both",      "clap",     None),
+            ("cnx_mix02", "model_outputs/model_output_convnext_mix02/both",   "convnext", None),
         ],
         "clap_ft": True,  # also include clap_ft logits
     },
     2: {
         "name": "5-model CLAP+ConvNeXt ensemble",
         "models": [
-            ("hloss_070", "model_output_clap_hloss_w070/both",  "clap",     None),
-            ("m02_clw",   "model_output_mixup02_classw/both",   "clap",     None),
-            ("bal_med",   "model_output_balanced_med/both",      "clap",     None),
-            ("combo_aug", "model_output_combo_aug/both",         "clap",     None),
-            ("cnx_mix02", "model_output_convnext_mix02/both",   "convnext", None),
+            ("hloss_070", "model_outputs/model_output_clap_hloss_w070/both",  "clap",     None),
+            ("m02_clw",   "model_outputs/model_output_mixup02_classw/both",   "clap",     None),
+            ("bal_med",   "model_outputs/model_output_balanced_med/both",      "clap",     None),
+            ("combo_aug", "model_outputs/model_output_combo_aug/both",         "clap",     None),
+            ("cnx_mix02", "model_outputs/model_output_convnext_mix02/both",   "convnext", None),
         ],
         "clap_ft": False,
     },
     3: {
         "name": "Single model: xswap",
         "models": [
-            ("xswap", "model_output_xswap_noise/both", "clap", None),
+            ("xswap", "model_outputs/model_output_xswap_noise/both", "clap", None),
         ],
         "clap_ft": False,
     },
     4: {
         "name": "Single model: 3mod_mx02 (CLAP+Whisper)",
         "models": [
-            ("3mod_mx02", "model_output_3mod_mix02/both", "clap", "whisper"),
+            ("3mod_mx02", "model_outputs/model_output_3mod_mix02/both", "clap", "whisper"),
         ],
         "clap_ft": False,
     },
@@ -268,7 +268,7 @@ def extract_clap_ft_logits(device):
             print(f"  Fold {fold}: cached")
             continue
 
-        ckpt_path = f"model_output_finetune/both/fold_{fold}/best_model.pth"
+        ckpt_path = f"model_outputs/model_output_finetune/both/fold_{fold}/best_model.pth"
         if not os.path.exists(ckpt_path):
             print(f"  Fold {fold}: checkpoint not found!")
             continue

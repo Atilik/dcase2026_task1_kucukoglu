@@ -21,38 +21,38 @@ SUBMISSIONS = {
     1: {
         "name": "5-model ensemble (mixup03+m02_hl07+bal_med+cnx_mix02+clap_ft)",
         "models": [
-            ("mixup03",   "model_output_mixup03/both",          "data"),
-            ("m02_hl07",  "model_output_mixup02_hloss07/both",  "data"),
-            ("bal_med",   "model_output_balanced_med/both",      "data"),
-            ("cnx_mix02", "model_output_convnext_mix02/both",   "data_convnext"),
-            ("clap_ft",   "model_output_finetune/both",         "data"),
+            ("mixup03",   "model_outputs/model_output_mixup03/both",          "data"),
+            ("m02_hl07",  "model_outputs/model_output_mixup02_hloss07/both",  "data"),
+            ("bal_med",   "model_outputs/model_output_balanced_med/both",      "data"),
+            ("cnx_mix02", "model_outputs/model_output_convnext_mix02/both",   "data_convnext"),
+            ("clap_ft",   "model_outputs/model_output_finetune/both",         "data"),
         ],
-        "yaml": "Kucukoglu_NYU_task1_1.meta.yaml",
+        "yaml": "results/Kucukoglu_NYU_task1_1.meta.yaml",
     },
     2: {
         "name": "5-model CLAP+ConvNeXt",
         "models": [
-            ("hloss_070", "model_output_clap_hloss_w070/both",  "data"),
-            ("m02_clw",   "model_output_mixup02_classw/both",   "data"),
-            ("bal_med",   "model_output_balanced_med/both",      "data"),
-            ("combo_aug", "model_output_combo_aug/both",         "data"),
-            ("cnx_mix02", "model_output_convnext_mix02/both",   "data_convnext"),
+            ("hloss_070", "model_outputs/model_output_clap_hloss_w070/both",  "data"),
+            ("m02_clw",   "model_outputs/model_output_mixup02_classw/both",   "data"),
+            ("bal_med",   "model_outputs/model_output_balanced_med/both",      "data"),
+            ("combo_aug", "model_outputs/model_output_combo_aug/both",         "data"),
+            ("cnx_mix02", "model_outputs/model_output_convnext_mix02/both",   "data_convnext"),
         ],
-        "yaml": "Kucukoglu_NYU_task1_2.meta.yaml",
+        "yaml": "results/Kucukoglu_NYU_task1_2.meta.yaml",
     },
     3: {
         "name": "Single model: xswap",
         "models": [
-            ("xswap", "model_output_xswap_noise/both", "data"),
+            ("xswap", "model_outputs/model_output_xswap_noise/both", "data"),
         ],
-        "yaml": "Kucukoglu_NYU_task1_3.meta.yaml",
+        "yaml": "results/Kucukoglu_NYU_task1_3.meta.yaml",
     },
     4: {
         "name": "Single model: 3mod_mx02",
         "models": [
-            ("3mod_mx02", "model_output_3mod_mix02/both", "data_3mod"),
+            ("3mod_mx02", "model_outputs/model_output_3mod_mix02/both", "data_3mod"),
         ],
-        "yaml": "Kucukoglu_NYU_task1_4.meta.yaml",
+        "yaml": "results/Kucukoglu_NYU_task1_4.meta.yaml",
     },
 }
 

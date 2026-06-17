@@ -46,7 +46,7 @@ AUDIO_DIR = "data/BSD10k-v1.2/audio"
 TEXT_EMB_DIR = "data/BSD10k-v1.2/features/clap_text_embeddings"
 CLASS_DICT_PATH = "data/class_dict.json"
 TOP_CLASS_DICT_PATH = "data/top_class_dict.json"
-OUTPUT_DIR = "model_output_finetune"
+OUTPUT_DIR = "model_outputs/model_output_finetune"
 
 # Which fold to run (set to None for all folds, or 0 for fold-0 only test)
 FOLD_ONLY = None  # Change to 0 for testing

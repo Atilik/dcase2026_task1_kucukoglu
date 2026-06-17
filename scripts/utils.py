@@ -8,7 +8,7 @@ import yaml
 
 def load_config(path=None):
     if path is None:
-        path = os.environ.get('CONFIG_FILE', 'config.yaml')
+        path = os.environ.get('CONFIG_FILE', 'configs/config.yaml')
     config_dir = os.path.dirname(os.path.realpath(__file__)) 
     config_path = os.path.join(config_dir, path) 
     

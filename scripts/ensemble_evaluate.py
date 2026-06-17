@@ -16,51 +16,50 @@ from evaluate import hierarchical_prf_weighted
 # All model directories: (name, model_dir) or (name, model_dir, data_dir)
 # Models without data_dir use the default from config.yaml
 ALL_MODEL_DIRS = [
-    # CLAP models (default data dir)
-    ("baseline",   "model_output/both"),
-    ("cw_only",    "model_output_cw_only/both"),
-    ("hloss_030",  "model_output_clap_hloss_w030/both"),
-    ("hloss_070",  "model_output_clap_hloss_w070/both"),
-    ("conf3",      "model_output_conf3/both"),
-    ("hloss_100",  "model_output_clap_hloss_w100/both"),
-    ("hloss_150",  "model_output_clap_hloss_w150/both"),
-    ("classw_sq",  "model_output_classw_sqrt/both"),
-    ("classw_cw",  "model_output_classw_cw/both"),
-    ("cw_hloss07", "model_output_cw_hloss07/both"),
-    ("cw_shifted", "model_output_cw_shifted/both"),
-    ("cw_binary",  "model_output_cw_binary/both"),
-    ("mixup01",    "model_output_mixup01/both"),
-    ("mixup02",    "model_output_mixup02/both"),
-    ("mixup03",    "model_output_mixup03/both"),
-    ("mixup04",    "model_output_mixup04/both"),
-    ("m02_cw",     "model_output_mixup02_cw/both"),
-    ("m02_hl07",   "model_output_mixup02_hloss07/both"),
-    ("m02_clw",    "model_output_mixup02_classw/both"),
-    ("bal_max",    "model_output_balanced_max/both"),
-    ("bal_med",    "model_output_balanced_med/both"),
-    ("xswap",      "model_output_xswap_noise/both"),
-    ("combo_aug",  "model_output_combo_aug/both"),
-    ("ls01",       "model_output_ls01/both"),
-    ("cutmix02",   "model_output_cutmix02/both"),
+    ("baseline",   "model_outputs/model_output/both"),
+    ("cw_only",    "model_outputs/model_output_cw_only/both"),
+    ("hloss_030",  "model_outputs/model_output_clap_hloss_w030/both"),
+    ("hloss_070",  "model_outputs/model_output_clap_hloss_w070/both"),
+    ("conf3",      "model_outputs/model_output_conf3/both"),
+    ("hloss_100",  "model_outputs/model_output_clap_hloss_w100/both"),
+    ("hloss_150",  "model_outputs/model_output_clap_hloss_w150/both"),
+    ("classw_sq",  "model_outputs/model_output_classw_sqrt/both"),
+    ("classw_cw",  "model_outputs/model_output_classw_cw/both"),
+    ("cw_hloss07", "model_outputs/model_output_cw_hloss07/both"),
+    ("cw_shifted", "model_outputs/model_output_cw_shifted/both"),
+    ("cw_binary",  "model_outputs/model_output_cw_binary/both"),
+    ("mixup01",    "model_outputs/model_output_mixup01/both"),
+    ("mixup02",    "model_outputs/model_output_mixup02/both"),
+    ("mixup03",    "model_outputs/model_output_mixup03/both"),
+    ("mixup04",    "model_outputs/model_output_mixup04/both"),
+    ("m02_cw",     "model_outputs/model_output_mixup02_cw/both"),
+    ("m02_hl07",   "model_outputs/model_output_mixup02_hloss07/both"),
+    ("m02_clw",    "model_outputs/model_output_mixup02_classw/both"),
+    ("bal_max",    "model_outputs/model_output_balanced_max/both"),
+    ("bal_med",    "model_outputs/model_output_balanced_med/both"),
+    ("xswap",      "model_outputs/model_output_xswap_noise/both"),
+    ("combo_aug",  "model_outputs/model_output_combo_aug/both"),
+    ("ls01",       "model_outputs/model_output_ls01/both"),
+    ("cutmix02",   "model_outputs/model_output_cutmix02/both"),
     # Different encoder models (custom data dirs)
-    ("whisper",    "model_output_whisper/both",         "data_whisper"),
-    ("convnext",   "model_output_convnext/both",        "data_convnext"),
-    ("cnx_mix02",  "model_output_convnext_mix02/both",  "data_convnext"),
-    ("matpac",     "model_output_matpac/both",          "data_matpac"),
+    ("whisper",    "model_outputs/model_output_whisper/both",         "data_whisper"),
+    ("convnext",   "model_outputs/model_output_convnext/both",        "data_convnext"),
+    ("cnx_mix02",  "model_outputs/model_output_convnext_mix02/both",  "data_convnext"),
+    ("matpac",     "model_outputs/model_output_matpac/both",          "data_matpac"),
     # 3-Modality models (CLAP audio + CLAP text + Whisper)
-    ("3mod",       "model_output_3mod/both",            "data_3mod"),
-    ("3mod_mx02",  "model_output_3mod_mix02/both",      "data_3mod"),
-    ("3mod_hl07",  "model_output_3mod_hloss07/both",    "data_3mod"),
+    ("3mod",       "model_outputs/model_output_3mod/both",            "data_3mod"),
+    ("3mod_mx02",  "model_outputs/model_output_3mod_mix02/both",      "data_3mod"),
+    ("3mod_hl07",  "model_outputs/model_output_3mod_hloss07/both",    "data_3mod"),
     # Contrastive Loss Models
-    ("contrastive_02", "model_output_contrastive_02/both"),
-    ("contrastive_05", "model_output_contrastive_05/both"),
+    ("contrastive_02", "model_outputs/model_output_contrastive_02/both"),
+    ("contrastive_05", "model_outputs/model_output_contrastive_05/both"),
     # End-to-End Finetuned CLAP
-    ("clap_ft",    "model_output_finetune/both"),
+    ("clap_ft",    "model_outputs/model_output_finetune/both"),
     # Strategy A: External Data
-    ("ft_mm_fixed", "model_output_finetune_mm_fixed/both"),
-    ("ext_weak",   "model_output_ext_weak/both",      "data_ext_weak"),
-    ("ext_all",    "model_output_ext_all/both",        "data_ext_all"),
-    ("ext_wt",     "model_output_ext_weighted/both",   "data_ext_weighted"),
+    ("ft_mm_fixed", "model_outputs/model_output_finetune_mm_fixed/both"),
+    ("ext_weak",   "model_outputs/model_output_ext_weak/both",      "data_ext_weak"),
+    ("ext_all",    "model_outputs/model_output_ext_all/both",        "data_ext_all"),
+    ("ext_wt",     "model_outputs/model_output_ext_weighted/both",   "data_ext_weighted"),
 ]
 
 NUM_FOLDS = 5
@@ -164,7 +163,7 @@ def collect_all_logits(valid_models, data_dfs, device):
             splits_path = os.path.join(model_dir, f"fold_{fold}", "splits.csv")
             if not os.path.exists(splits_path):
                 # Fallback to default splits if missing
-                splits_path = f"model_output/both/fold_{fold}/splits.csv"
+                splits_path = f"model_outputs/model_output/both/fold_{fold}/splits.csv"
             splits = pd.read_csv(splits_path)
             test_indices = splits[splits['split'] == 'test']['index'].astype(str).tolist()
             test_df = full_df[full_df['index'].astype(str).isin(test_indices)].sort_values('index').reset_index(drop=True)

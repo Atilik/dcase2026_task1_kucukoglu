@@ -40,7 +40,7 @@ TEXT_EMB_DIR = "data/BSD10k-v1.2/features/clap_text_embeddings"
 EXT_TEXT_DIR = "data/external_embeddings/clap_text_embeddings"
 CLASS_DICT_PATH = "data/class_dict.json"
 TOP_CLASS_DICT_PATH = "data/top_class_dict.json"
-OUTPUT_DIR = "model_output_finetune_ext"
+OUTPUT_DIR = "model_outputs/model_output_finetune_ext"
 
 FOLD_ONLY = 0  # Start with fold 0 only to verify pipeline works, as user requested
 

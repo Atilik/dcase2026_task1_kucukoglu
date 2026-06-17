@@ -17,7 +17,7 @@ def main():
     metadata_csv = "data/processed_dataset.csv"
     audio_dir = "data/BSD10k-v1.2/audio"
     text_emb_dir = "data/BSD10k-v1.2/features/clap_text_embeddings"
-    output_dir = "model_output_finetune/both"
+    output_dir = "model_outputs/model_output_finetune/both"
     
     full_df = pd.read_csv(metadata_csv)
     preprocessor = CLAPAudioPreprocessor()
@@ -37,7 +37,7 @@ def main():
             continue
             
         # Get test split (same splits logic as rest of codebase)
-        splits_path = f"model_output/both/fold_{fold}/splits.csv"
+        splits_path = f"model_outputs/model_output/both/fold_{fold}/splits.csv"
         splits = pd.read_csv(splits_path)
         test_indices = splits[splits['split'] == 'test']['index'].astype(str).tolist()
         test_df = full_df[full_df['index'].astype(str).isin(test_indices)].sort_values('index').reset_index(drop=True)

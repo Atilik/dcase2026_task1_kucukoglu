@@ -24,7 +24,7 @@ from models import BaseClassifier
 # Config
 METADATA_CSV = "data/processed_dataset.csv"
 AUDIO_DIR = "data/BSD10k-v1.2/audio"
-FINETUNE_DIR = "model_output_finetune/both"
+FINETUNE_DIR = "model_outputs/model_output_finetune/both"
 OUTPUT_DIR = "data/BSD10k-v1.2/features/finetuned_clap_audio_embeddings"
 CLAP_SR = 48000
 MAX_DURATION = 10

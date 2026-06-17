@@ -14,7 +14,7 @@ def run(script, config_file):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', default='config.yaml', help='Config file to use (e.g. config_beats.yaml)')
+    parser.add_argument('--config', default='configs/config.yaml', help='Config file to use (e.g. configs/config_beats.yaml)')
     args = parser.parse_args()
 
     config_file = args.config

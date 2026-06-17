@@ -58,7 +58,7 @@ def make_serializable(obj, decimals=6):
     
 def train_model(model, train_loader, val_loader, device,
                 num_epochs=100, lr=0.001, classification_weight=1.0, classification_criterion=None, 
-                output_dir='model_output', scheduler_type='plateau', patience=10, early_stopping_factor=5,
+                output_dir='model_outputs/model_output', scheduler_type='plateau', patience=10, early_stopping_factor=5,
                 top_class_loss_weight=0.0, class_to_topclass_tensor=None, mixup_alpha=0.0,
                 cutmix_alpha=0.0, label_smoothing=0.0,
                 contrastive_criterion=None, contrastive_lambda=0.0):
@@ -278,7 +278,7 @@ if __name__ == "__main__":
         top_class_dict = json.load(f)
 
     modes = get_subconfig('modes') or ['both', 'audio']  # Read from config, default to both+audio
-    model_output = get_subconfig('model_output_dir') or './model_output'  # Read from config, default to model_output
+    model_output = get_subconfig('model_output_dir') or './model_outputs/model_output'  # Read from config, default to model_output
 
     batch_size = 64
     num_epochs = 100

@@ -40,8 +40,8 @@ NUM_TOP_CLASSES = 5
 BASE_CSV = "data/processed_dataset.csv"  # baseline CSV with frozen CLAP paths
 FT_EMB_BASE = "data/BSD10k-v1.2/features/finetuned_clap_audio_embeddings"
 TEXT_EMB_DIR = "data/BSD10k-v1.2/features/clap_text_embeddings"
-OUTPUT_DIR = "model_output_finetune_mm_fixed/both"
-BASELINE_SPLITS_DIR = "model_output/both"  # use same splits as all other models
+OUTPUT_DIR = "model_outputs/model_output_finetune_mm_fixed/both"
+BASELINE_SPLITS_DIR = "model_outputs/model_output/both"  # use same splits as all other models
 
 CLASS_DICT = "data/class_dict.json"
 TOP_CLASS_DICT = "data/top_class_dict.json"
