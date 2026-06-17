@@ -461,7 +461,7 @@ def generate_output_csv(sample_ids, predictions, confidence, sub_id):
 
     pred_classes = [idx_to_class[int(p)] for p in predictions]
 
-    output_path = f"{TEAM}_task1_{sub_id}.output.csv"
+    output_path = f"results/{TEAM}_task1_{sub_id}.output.csv"
     df = pd.DataFrame({
         'id': sample_ids,
         'predicted_bst_second_level_class': pred_classes,
