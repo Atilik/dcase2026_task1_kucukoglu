@@ -9,9 +9,20 @@ import yaml
 def load_config(path=None):
     if path is None:
         path = os.environ.get('CONFIG_FILE', 'configs/config.yaml')
-    config_dir = os.path.dirname(os.path.realpath(__file__)) 
-    config_path = os.path.join(config_dir, path) 
     
+    # Try relative to current working directory first
+    if os.path.exists(path):
+        config_path = os.path.abspath(path)
+    else:
+        # Fall back to parent directory of the script (project root)
+        config_dir = os.path.dirname(os.path.realpath(__file__))
+        parent_dir_path = os.path.abspath(os.path.join(config_dir, "..", path))
+        if os.path.exists(parent_dir_path):
+            config_path = parent_dir_path
+        else:
+            # Fall back to script directory (original baseline behavior)
+            config_path = os.path.join(config_dir, path)
+            
     if not os.path.exists(config_path): 
         raise FileNotFoundError(f"Config file not found at {config_path}")
     with open(config_path, 'r') as f:

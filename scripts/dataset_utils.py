@@ -1,3 +1,4 @@
+import os
 import random
 import numpy as np
 import torch
@@ -8,10 +9,17 @@ _emb_cache = {}
 def _load_npy_cached(path):
     if not isinstance(path, str) or str(path) == 'nan' or not path:
         return None
+        
+    # Map old hardcoded baseline repo path to actual repository root path
+    if "dcase2026_task1_baseline" in path:
+        project_root = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
+        path = path.replace("/scratch/mk9649/repos/dcase2026_task1_baseline", project_root)
+        
     if path not in _emb_cache:
         try:
             _emb_cache[path] = torch.tensor(np.load(path), dtype=torch.float32)
-        except Exception:
+        except Exception as e:
+            print(f"Error loading embedding from path {path}: {e}")
             return None
     return _emb_cache[path].clone()
 

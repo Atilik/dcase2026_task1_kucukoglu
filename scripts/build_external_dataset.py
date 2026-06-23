@@ -3,8 +3,6 @@
 Maps external audio datasets to BST taxonomy, checks for overlap with BSD10k,
 and outputs data/external_mapping.csv with the combined mapping.
 
-Run on login node (no GPU needed):
-    ./sing <<< "python -u build_external_dataset.py"
 """
 import os
 import json
@@ -195,7 +193,7 @@ def print_distribution(all_mapped, class_dict):
     # Sort by BST class name
     idx_to_class = {v: k for k, v in class_dict.items()}
 
-    weak_classes = {"sp-c", "ss-i"}  # fx-ex removed: no external data maps to "experimental"
+    weak_classes = {"sp-c", "ss-i"}  
 
     print(f"\n{'Class':<8} {'Count':>6}  {'Source Distribution'}")
     print("-" * 60)
@@ -205,7 +203,7 @@ def print_distribution(all_mapped, class_dict):
         # Source breakdown
         sources = Counter(s["dataset_source"] for s in all_mapped if s["bst_class"] == bst_class)
         source_str = ", ".join(f"{k}: {v}" for k, v in sorted(sources.items()))
-        marker = " ⭐ WEAK" if bst_class in weak_classes else ""
+        marker = " * WEAK" if bst_class in weak_classes else ""
         print(f"{bst_class:<8} {count:>6}  {source_str}{marker}")
 
     # Top-level distribution
